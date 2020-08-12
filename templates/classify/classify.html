@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<hr class="major" />
+<div class="container">
+<br>
+	<div class="row">
+		<section class="6u 12u$(medium)">
+			{% for data in datas %}
+    			<p>  1500번개의 리뷰중 {{ data.id }}번째 순서입니다 </p>
+                <p> Date : {{ data.date }}</p>
+                <p>NICKNAME : {{ data.nickname  }}</P>
+                <p> rating : {{ data.rating }}</p>
+                <p> Comment : {{ data.comment|linebreaksbr  }}</p></section>
+            {% endfor %}
+		</section>
+		<section class="3u 6u(medium) 12u$(small)">
+            <p><strong> Category </strong></p>
+                <form method="POST">
+                 {% csrf_token %}
+                <div class="6u$ 12u$(small)">
+					<input type="checkbox" id="category1" name="choice" value="category1">
+					<label for="category1">Cateogory1</label>
+				</div>
+                <div class="6u$ 12u$(small)">
+					<input type="checkbox" id="category2" name="choice" value="category2">
+					<label for="category2">Cateogory2</label>
+				</div>
+                <div class="6u$ 12u$(small)">
+					<input type="checkbox" id="category3" name="choice" value="category3">
+					<label for="category3">Cateogory3</label>
+				</div>
+                <div class="6u$ 12u$(small)">
+					<input type="checkbox" id="category4" name="choice" value="category4">
+					<label for="category4">Cateogory4</label>
+				</div>				
+                 <br>
+                 <table>
+                     <tr>
+                         <td><button type="button" class="btn btn-primary" value="뒤로가기" onClick="history.go(-1)">뒤로가기</button></td>
+                         <td><button type="reset" class="btn btn-primary" value="다시하기">다시하기</button></td>
+                         <td><button type="submit" class="btn btn-primary" value="제출하기">제출하기</button></td>   
+                     </tr> 
+                 </table>  
+             </form>	
+         </section>
+	</div>
+</div>
+<hr class="major" />
+ <!--                {% for i in categorys %}
+                    <label for="{{ i }}"> <input type="checkbox" id="{{ i }}" name="choice" value="{{ i }}" >
+                     {{ i }}</label><br>
+                 {% endfor %} -->
+         
+{% endblock %}

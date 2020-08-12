@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<!-- Main Page 여기서 모든것 시작
+-->
+<html>
+	<head>
+		<title>Application Review Classfication</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+	</head>
+	<body>
+	{% include "header.html" %}
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+
+					<div class="flex ">
+						<div>
+							{% if user.is_authenticated %}
+                            <h3> {{ user.username }}님 환영합니다</h3><br>
+                            <p>분류를 진행해주세요</p>
+                            {% else %}
+							<p>로그인이나 회원가입 후 진행해주세요</p>
+                            {% endif %}
+						</div>
+					</div>
+					<header>
+						<h1>Application Review Classification</h1>
+					</header>
+					<footer>
+						{% if user.is_authenticated %}
+						<a href="{% url 'classify:annotate' 1%}" class="button">분류시작하기</a>
+    					{% else %}
+    					<a onclick="alert('로그인을 해주세요.');" class="button">분류시작하기</a>
+    					{% endif %}
+					</footer>
+				</div>
+			</section>
+
+		<!-- Three  여기 뭐 채우지 ..? --> 
+			<section id="three" class="wrapper align-center">
+				<div class="inner">
+					<div class="flex flex-2">
+						<article>
+							<div class="image round">
+								<img src="/static/img/pic01.jpg" alt="Pic 01" />
+							</div>
+							<header>
+								<h3>Text Annotation</h3>
+							</header>
+							<p>Text Annotation is the practice and the result of adding a note or gloss to a text, 
+							<br />which may include highlights or underlining, comments, footnotes, tags, and links. 
+                            </p>
+							<footer>
+								        <a href="{% url 'annotate:index' %}" class="button">Move</a>
+							</footer>
+						</article>
+						<article>
+							<div class="image round">
+								<img src="/static/img/pic02.jpg" alt="Pic 02" />
+							</div>
+							<header>
+								<h3>Django Framework</h3>
+							</header>
+							<p>high-level Python Web framework 
+							<br />it takes care of much of the hassle of Web development.</p>
+							<footer>
+								<a href="https://www.djangoproject.com/" class="button">Move</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>  
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>made by ~~~~~~~~</h3>
+
+				<!--	<form action="#" method="post">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+						 </form> -->
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/static/js/jquery.min.js"></script>
+			<script src="/static/js/skel.min.js"></script>
+			<script src="/static/js/util.js"></script>
+			<script src="/static/js/main.js"></script>
+
+	</body>
+</html>

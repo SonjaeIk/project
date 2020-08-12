@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <title>TESTING PAGE</title>
+    <h1>Testing Page</h1>
+</head>
+
+{% for data in datas %}
+    <h1> id : {{ data.id }} </h1>
+    <h4> Date : {{ data.date }}</h4>
+    <p>NICKNAME : {{ data.nickname  }}</P>
+    <p> rating : {{ data.rating }}</p>
+    <p> Comment : {{ data.comment|linebreaksbr  }}</p>
+</div>
+{% endfor %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {% for i in gorys %}
+            <input type="radio" name="choice" id="i" value="i" > {{ i }} <br>
+            {% endfor %}<br>
+        <input type="button" class="btn btn-primary" value="뒤로가기" onClick="history.go(-1)"> 
+        <button type="submit" class="btn btn-primary">제출하기</button>
+    </form>
+    
+<!-- test -->
+    
+	<!-- Form -->
+									<h3>Form</h3>
+
+									<form method="post">
+										<div class="row uniform">
+											<div class="6u 12u$(xsmall)">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<!-- Break -->
+											<div class="12u$">
+												<div class="select-wrapper">
+													<select name="demo-category" id="demo-category">
+														<option value="">- Category -</option>
+														<option value="1">Manufacturing</option>
+														<option value="1">Shipping</option>
+														<option value="1">Administration</option>
+														<option value="1">Human Resources</option>
+													</select>
+												</div>
+											</div>
+											<!-- Break -->
+										
+											<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="중식" name="demo-human">
+												<label for="중식">중식</label>
+											</div>
+											<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="양식" name="demo-human">
+												<label for="양식">양식</label>
+											</div>
+											<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="한" name="demo-human">
+												<label for="한">한</label>
+											</div>
+											<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="일식" name="demo-human">
+												<label for="일식">일식</label>
+											</div>
+											<!-- Break -->
+											<div class="12u$">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<!-- Break -->
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" /></li>
+													<li><input type="reset" value="Reset" class="alt" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+
+									<hr />
+
+									<form method="post" action="#">
+										<div class="row uniform">
+											<div class="9u 12u$(small)">
+												<input type="text" name="query" id="query" value="" placeholder="Query" />
+											</div>
+											<div class="3u$ 12u$(small)">
+												<input type="submit" value="Search" class="fit" />
+											</div>
+										</div>
+									</form>    
+    
+    
+{% endblock %}
