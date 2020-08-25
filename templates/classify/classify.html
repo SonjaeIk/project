@@ -6,34 +6,31 @@
 	<div class="row">
 		<section class="6u 12u$(medium)">
 			{% for data in datas %}
-    			<p>  1500번개의 리뷰중 {{ data.id }}번째 순서입니다 </p>
+    			<p>  1500번개의 리뷰중 <strong>{{ data.id }}</strong>번째 순서입니다</p>
                 <p> Date : {{ data.date }}</p>
-                <p>NICKNAME : {{ data.nickname  }}</P>
-                <p> rating : {{ data.rating }}</p>
-                <p> Comment : {{ data.comment|linebreaksbr  }}</p></section>
+                <p> Nickname : {{ data.nickname  }}</P>
+                <p> Rating : {{ data.rating }}</p>
+                <p> Comment :<br>
+                <strong>{{ data.comment|linebreaksbr}}</strong></p>
             {% endfor %}
 		</section>
 		<section class="3u 6u(medium) 12u$(small)">
-            <p><strong> Category </strong></p>
+            <p><strong> 카테고리 </strong></p>
                 <form method="POST">
                  {% csrf_token %}
-                <div class="6u$ 12u$(small)">
-					<input type="checkbox" id="category1" name="choice" value="category1">
-					<label for="category1">Cateogory1</label>
-				</div>
-                <div class="6u$ 12u$(small)">
-					<input type="checkbox" id="category2" name="choice" value="category2">
-					<label for="category2">Cateogory2</label>
-				</div>
-                <div class="6u$ 12u$(small)">
-					<input type="checkbox" id="category3" name="choice" value="category3">
-					<label for="category3">Cateogory3</label>
-				</div>
-                <div class="6u$ 12u$(small)">
-					<input type="checkbox" id="category4" name="choice" value="category4">
-					<label for="category4">Cateogory4</label>
-				</div>				
-                 <br>
+					<input type="checkbox" id="1" name="choice" value="1">
+					<label for="1">앱의 장점(App Feature Strength)</label>
+					<input type="checkbox" id="2" name="choice" value="2">
+					<label for="2">앱의 단점(App Feature Strength)</label>
+					<input type="checkbox" id="3" name="choice" value="3">
+					<label for="3">앱기능 요청(App User Request)</label>
+					<input type="checkbox" id="4" name="choice" value="4">
+					<label for="4">앱 버그 보고(App Bug Report)</label>
+					<input type="checkbox" id="5" name="choice" value="5">
+					<label for="5">불만(General Complaint)</label>
+					<input type="checkbox" id="6" name="choice" value="6">
+					<label for="6">칭찬(Praise)</label>
+                 <br><br>
                  <table>
                      <tr>
                          <td><button type="button" class="btn btn-primary" value="뒤로가기" onClick="history.go(-1)">뒤로가기</button></td>
@@ -44,11 +41,9 @@
              </form>	
          </section>
 	</div>
+         <pre><strong>※ 만약 해당되는 카테고리가 없다면, 그냥 넘어가주세요.</strong></pre>
 </div>
 <hr class="major" />
- <!--                {% for i in categorys %}
-                    <label for="{{ i }}"> <input type="checkbox" id="{{ i }}" name="choice" value="{{ i }}" >
-                     {{ i }}</label><br>
-                 {% endfor %} -->
+
          
 {% endblock %}

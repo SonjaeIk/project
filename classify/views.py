@@ -21,8 +21,11 @@ from django import forms
 #     return render(request, 'classify/css_testing.html')
 
 def main(request):
-    data = Review_data.objects.all()
+    # data = Review_data.objects.all()
     return render(request, 'classify/main.html')
+
+def description(request):
+    return render(request, 'classify/description.html')
 
 def annotate(request, review_data_id = 1):
     now = datetime.datetime.now()

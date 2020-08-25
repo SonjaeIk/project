@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<hr class="major" />
+<header class="align-center">
+    	<h4><strong>카테고리 관련 설명</strong></h4>
+</header>
+<div class="container">
+<br>
+	<div class="row">
+		<section class="6u 12u$(small)">
+            <p><strong>앱의 장점(App Feature Strength)</strong><br>
+            ▶ 사용자가 만족하는 기능에 대한 부분을 식별</p>
+            <p><strong>앱의 단점(App Feature Strength)</strong><br>
+            ▶ 사용자가 만족하지 못하는 기능에 대한 부분을 식별</p>       
+            <p><strong>앱기능 요청(App User Request)</strong><br>
+            ▶ 누락된 기능, 새로운 기능을 요청, 기존 기능의 개선을 요청</p>
+            <p><strong>앱 버그 보고(App Bug Report)</strong><br>
+            ▶ 앱 내의 특정기능의 잘못된 동작과 같은 문제를 보고</p>
+            <hc class="major" /> 
+		</section>
+		<section class="6u 12u$(small)">
+            <p><strong>불만(General Complaint)</strong><br>
+            ▶ 사용자가 앱에 대한 불만을 표시, 기능적인 측면이 아닌<br>
+            단순 불만</p>
+            <p><strong>칭찬(Praise)</strong><br>
+            ▶ 사용자가 앱에 대한 단순 칭찬을 표시, 기능적 측면이 아닌<br>
+            단순 칭찬</p>     
+        </section>
+	</div>
+<p>※ 카테고리 내용이 충분히 숙지되었다면, 진행해주세요</p>
+</div>
+<hr class="major" />
+<div class="align-center">
+    <footer>
+        <a href="{% url 'classify:annotate' 1%}" class="button">분류진행하기</a>
+</footer>    
+{% endblock %}
