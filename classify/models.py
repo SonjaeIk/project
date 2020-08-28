@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 class Review_data(models.Model): ### 리뷰를 담을 곳
-    id = models.AutoField(primary_key = True)
+    id = models.IntegerField(primary_key = True)
     nickname = models.CharField(max_length = 20)
     date = models.CharField(max_length = 30)
     rating = models.IntegerField()
