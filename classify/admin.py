@@ -6,8 +6,8 @@ from .resources import ReviewDataResource
 # Register your models here.
 
 @admin.register(Review_data)
-
+# @admin.register(Review_Classfiy)
 
 class ReviewDataAdmin(ImportExportModelAdmin):
     pass
-admin.site.register(Review_Classfiy)
+admin.site.register(Review_Classfiy, ReviewDataAdmin)
